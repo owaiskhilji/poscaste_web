@@ -4,15 +4,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        backgroundcolor: "#EFDCAB",
         textcolor: "#DB3F29",
-        hovertextcolor: "#30b50b",
       },
       fontFamily: {
-        arabic: ['Amiri', 'serif'],
-        playfair: ["Playfair Display", "serif"],
-        poppins: ["Poppins", "sans-serif"],
-        merriweather: ["Merriweather", "serif"],
+        titillium: ['"Titillium Web"', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
       },
     },
   },
