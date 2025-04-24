@@ -5,7 +5,7 @@ export default {
     extend: {
       colors: {
         backgroundcolor: "#EFDCAB",
-        textcolor: "#1A4D2E",
+        textcolor: "#DB3F29",
         hovertextcolor: "#30b50b",
       },
       fontFamily: {
