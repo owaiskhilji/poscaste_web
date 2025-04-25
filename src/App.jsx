@@ -5,9 +5,11 @@ import {Routes,Route,useLocation } from "react-router-dom";
  import Blog from "./Pages/Blog"
 import B2b from "./Pages/B2b"
  import Contact from "./Pages/Contact"
+ import Home from "./Pages/Home"
 // import Notfound from "./Pages/Notfound"
 import Navbar from "./Components/Main/Navbar"
 import Work from "./Pages/Work"
+import Footer from "./Components/Main/Footer"
 
 
 function ScrollToTop() {
@@ -30,15 +32,15 @@ function App() {
 <Navbar />
     <ScrollToTop/>
 <Routes>
-
-
-{/* <Route path="/" element={<Home/>} />  */}
+<Route path="/" element={<Home/>} />
 <Route path="/work" element={<Work/>} />
 <Route path="/blog" element={<Blog/>} />
 <Route path="/b2b" element={<B2b/>} />
  <Route path="/contact" element={< Contact/>} /> 
- {/* <Route path="/*" element={< Notfound/>} />  */}
 </Routes>
+
+<Footer/>
+
 </div>
   )
 }

@@ -36,7 +36,7 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex md:items-end md:space-x-12 mr-14">
-            <Link to="#" className="text-white hover:text-textcolor text-xl">HOME</Link>
+            <Link to="/" className="text-white hover:text-textcolor text-xl">HOME</Link>
             <Link to="#" className="text-white hover:text-textcolor text-xl">PRICING</Link>
 
             {/* Dropdown */}
@@ -68,7 +68,7 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="md:hidden px-4 pt-2 pb-4 space-y-2 bg-white shadow-lg">
-          <Link to="#" className="block text-gray-700 hover:text-textcolor text-base">Home</Link>
+          <Link to="/" className="block text-gray-700 hover:text-textcolor text-base">Home</Link>
           <Link to="#" className="block text-gray-700 hover:text-textcolor text-base">Pricing</Link>
 
           {/* Mobile Dropdown */}

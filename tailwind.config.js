@@ -4,7 +4,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        textcolor: "#DB3F29",
+        // textcolor: "#DB3F29",
+        textcolor: "#F97316",
       },
       fontFamily: {
         titillium: ['"Titillium Web"', 'sans-serif'],

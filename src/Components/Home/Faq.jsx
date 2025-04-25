@@ -3,23 +3,29 @@ import React, { useState } from "react";
 const faqData = [
   {
     question: "Is a B2B podcast something your business should be doing?",
-    answer: "    Raising brand awareness is certainly high up the list of common motivators for businesses wishing to start a podcast. Podcasts can be listened to by anyone with a smartphone or tablet, and businesses who turn to podcasting find new audiences to engage that they might otherwise struggle to reach."  },
+    answer:
+      "Raising brand awareness is certainly high up the list of common motivators for businesses wishing to start a podcast. Podcasts can be listened to by anyone with a smartphone or tablet, and businesses who turn to podcasting find new audiences to engage that they might otherwise struggle to reach.",
+  },
   {
     question: "How much should you spend on B2B podcast production services?",
-    answer: "As with everything — you get what you pay for. If your business or organisation is in a highly competitive sector then you’ll have to become very inventive to be noticed. Content marketing can be cost-effective, particularly so with the audio format. If you intend to produce weekly podcast episodes along with supporting social media management and some YouTube / TikTok content, then a leading professional B2B podcast production service provider will charge somewhere in the region of £2000+ per month (GBP). "
+    answer:
+      "As with everything — you get what you pay for. If your business or organisation is in a highly competitive sector then you’ll have to become very inventive to be noticed. Content marketing can be cost-effective, particularly so with the audio format. A professional service may charge £2000+ per month.",
   },
   {
     question: "Will I be able to keep producing enough content?",
-    answer: "One common concern is that of content creation. When you first think of topics to cover, relevant people to interview etc, your list may be fairly limited. Fear not though, for as soon as you get going you’ll find that the topics you can cover are virtually limitless. Also, the more people you talk to, the more connections you make and the greater your reach of new interviewees. You can also choose to go into macro detail regarding niche aspects of your business / services. It’s all about creating valuable content that engages the audience and a good place to start here is to cover common questions / concerns that your customers have."
+    answer:
+      "One common concern is content creation. But once you start, you'll discover limitless topics. The more you connect with people, the more content ideas you’ll have. Just begin!",
   },
   {
     question: "Will I have the technical ability to record and produce content?",
-    answer: "Another frequently voiced concern is: do you need to be an IT wizard to produce high quality audio content? — In short, no you don’t! This is where professional B2B podcast production service providers really prove their worth as they’ll be able to recommend microphones, recording equipment, best practices, and how to use any relevant software. If you go for a comprehensive package then your podcast producer will be able to handle all the production for you, so all you’ll need to do is press the record before you start your next episode!"
+    answer:
+      "You don’t need to be an IT wizard! A professional podcast team can guide you on gear, software, and even handle production. Just focus on your voice!",
   },
   {
     question: "Will I be able to handle the extra work associated with managing a podcast?",
-    answer: "The good news here is that you get to define your workload. Podcast episodes can run anywhere between 24 to 240 minutes! They can be in a format that’s very structured, or they can be informal chats. Your chosen B2B podcast production service provider will be able to help with the management side of things, and can regularly check-in with you to make sure things are on-track.  ‘PodcastChoice’ offers a flexible range of specialist podcast production services that can be fully tailored to your needs. Head over to https://podcastchoice.com/ now to reach audiences you’ve never reached before and generate the buzz you’re looking for."
-  }
+    answer:
+      "Yes! You define the workload and format. Episodes can be long or short, formal or casual. A good provider can help manage everything so you’re not overwhelmed.",
+  },
 ];
 
 const Faq = () => {
@@ -30,24 +36,41 @@ const Faq = () => {
   };
 
   return (
-    <div className="max-w-3xl mx-auto p-4">
-      <h2 className="text-2xl font-bold mb-4 text-center">Frequently Asked Questions</h2>
-      {faqData.map((item, index) => (
-        <div key={index} className="border-b border-gray-300 py-3">
-          <button
-            onClick={() => toggle(index)}
-            className="w-full text-left flex justify-between items-center font-medium text-lg"
+    <div className="max-w-full mx-auto p-6 bg-white rounded-lg shadow-xl">
+      <h2 className="text-3xl font-bold text-center text-orange-500 mb-8">
+        Frequently Asked Questions
+      </h2>
+      <div className="space-y-4">
+        {faqData.map((item, index) => (
+          <div
+            key={index}
+            className={`border border-gray-200 rounded-lg p-5 transition-all duration-300 ${
+              openIndex === index ? "bg-orange-50 shadow-md" : ""
+            }`}
           >
-            {item.question}
-            <span className="text-xl">
-              {openIndex === index ? "-" : "+"}
-            </span>
-          </button>
-          {openIndex === index && (
-            <p className="mt-2 text-gray-700">{item.answer}</p>
-          )}
-        </div>
-      ))}
+            <button
+              onClick={() => toggle(index)}
+              className="w-full flex justify-between items-center text-lg font-semibold text-gray-800 hover:text-orange-500 focus:outline-none"
+            >
+              <span>{item.question}</span>
+              <span className="text-orange-500 text-2xl">
+                {openIndex === index ? "−" : "+"}
+              </span>
+            </button>
+
+            {/* Answer section with animation */}
+            <div
+              className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                openIndex === index ? "max-h-96 opacity-100 mt-3" : "max-h-0 opacity-0"
+              }`}
+            >
+              <div className="text-gray-700 text-sm leading-relaxed">
+                {item.answer}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
